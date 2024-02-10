@@ -2,7 +2,6 @@ package dev.thallesrafael.apicurso.entities;
 
 import java.io.Serializable;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,7 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "tb_user")
 public class User implements Serializable {
 
-    private static final long serialVersionUid= 1l;
+    private static final long serialVersionUid = 1l;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -21,7 +20,10 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
-    
+
+    public User() {
+    }
+
     public User(Integer id, String nome, String email, String phone, String password) {
         this.id = id;
         this.nome = nome;
@@ -99,7 +101,4 @@ public class User implements Serializable {
         return true;
     }
 
-    
-    
-    
 }
